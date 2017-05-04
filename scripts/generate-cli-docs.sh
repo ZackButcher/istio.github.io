@@ -4,13 +4,15 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
+# TODO(REVIEWER): how do we want to handle finding the two binaries? set a default and try, or abort?
+ISTIOCTL=${ISTIOCTL:-istioctl}
 if [[ -z "${MIXCOL_CLI}" ]]; then
     echo "No mixcol command defined via the environment variable MIXCOL_CLI"
     exit 1
 fi
 
 ISTIO_BASE=$(cd "$(dirname "$0")" ; pwd -P)/..
-MIXER_CLI_DIR=$(readlink -f ${ISTIO_BASE}/_docs/reference/mixercli/)
+OUTPUT_DIR=$(readlink -f ${ISTIO_BASE}/_docs/reference/commands/)
 WORKING_DIR=$(mktemp -d)
 
 function pageHeader() {
@@ -85,18 +87,17 @@ function processPerBinaryFiles() {
     sed "s,${commandName}.md,#${commandName},g;s/SEE ALSO/See Also/g" ${out};
 }
 
-# Generate markdown files with mixcol. We create a subdirectory so we can grab
-# all *.md files out of it without having to worry about random *.md files
-# added to the root of the mixer git repo.
-mkdir -p ${WORKING_DIR}
+# Generate our output
 ${MIXCOL_CLI} -o ${WORKING_DIR}
+${ISTIOCTL} markdown --dir ${WORKING_DIR}
 
 # Clean up the target directory
-mkdir -p ${MIXER_CLI_DIR}
-rm -f ${MIXER_CLI_DIR}/*
+mkdir -p ${OUTPUT_DIR}
+rm -f ${OUTPUT_DIR}/*
 
-generateIndex > ${MIXER_CLI_DIR}/index.md
-processPerBinaryFiles "mixc" 1 >  ${MIXER_CLI_DIR}/mixc.md
-processPerBinaryFiles "mixs" 2 >  ${MIXER_CLI_DIR}/mixs.md
+generateIndex > ${OUTPUT_DIR}/index.md
+processPerBinaryFiles "istioctl" 1 > ${OUTPUT_DIR}/istioctl.md
+processPerBinaryFiles "mixc" 101 >  ${OUTPUT_DIR}/mixc.md
+processPerBinaryFiles "mixs" 201 >  ${OUTPUT_DIR}/mixs.md
 
 rm -rfd ${WORKING_DIR}
