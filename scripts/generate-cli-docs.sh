@@ -3,6 +3,7 @@
 set -o errexit
 set -o nounset
 set -o pipefail
+set -x
 
 # TODO(REVIEWER): how do we want to handle finding the two binaries? set a default and try, or abort?
 ISTIOCTL=${ISTIOCTL:-istioctl}
@@ -34,8 +35,8 @@ EOF
 function generateIndex() {
     cat <<EOF
 ---
-title: The Mixer CLI
-overview: Options showing how to use the Mixer's CLIs.
+title: Commands
+overview: Describes usage and options of the Istio CLI.
 order: 30
 layout: docs
 type: markdown

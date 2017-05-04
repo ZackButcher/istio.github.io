@@ -1,20 +1,21 @@
 ---
 title: mixs
-overview: Mixer provides control plane functionality to the Istio proxy and services
+overview: Mixer is Istio's abstraction on top of infrastructure backends.
 layout: docs
-order: 2
+order: 201
 type: markdown
 ---
 
 <a name="mixs"></a>
 ## mixs
 
-Mixer provides control plane functionality to the Istio proxy and services
+Mixer is Istio's abstraction on top of infrastructure backends.
 
 ### Synopsis
 
 
-Mixer provides control plane functionality to the Istio proxy and services
+Mixer is Istio's point of integration with infrastructure backends and is the
+nexus for policy evaluation and telemetry reporting.
 
 ### See Also
 * [mixs inventory](#mixs_inventory)	 - Inventory of available adapters and aspects in Mixer
@@ -66,7 +67,7 @@ Inventory of available adapters and aspects in Mixer
 Inventory of available adapters and aspects in Mixer
 
 ### See Also
-* [mixs](#mixs)	 - Mixer provides control plane functionality to the Istio proxy and services
+* [mixs](#mixs)	 - Mixer is Istio's abstraction on top of infrastructure backends.
 * [mixs inventory adapter](#mixs_inventory_adapter)	 - List available adapter builders
 * [mixs inventory aspect](#mixs_inventory_aspect)	 - List available aspects
 
@@ -106,7 +107,7 @@ mixs server
 ```
 
 ### See Also
-* [mixs](#mixs)	 - Mixer provides control plane functionality to the Istio proxy and services
+* [mixs](#mixs)	 - Mixer is Istio's abstraction on top of infrastructure backends.
 
 <a name="mixs_version"></a>
 ## mixs version
@@ -123,5 +124,5 @@ mixs version
 ```
 
 ### See Also
-* [mixs](#mixs)	 - Mixer provides control plane functionality to the Istio proxy and services
+* [mixs](#mixs)	 - Mixer is Istio's abstraction on top of infrastructure backends.
 

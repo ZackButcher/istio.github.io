@@ -1,15 +1,15 @@
 ---
 title: mixc
-overview: Utility to trigger direct calls to Mixer's API
+overview: Utility to trigger direct calls to Mixer's API.
 layout: docs
-order: 1
+order: 101
 type: markdown
 ---
 
 <a name="mixc"></a>
 ## mixc
 
-Utility to trigger direct calls to Mixer's API
+Utility to trigger direct calls to Mixer's API.
 
 ### Synopsis
 
@@ -90,7 +90,7 @@ mixc check
 ```
 
 ### See Also
-* [mixc](#mixc)	 - Utility to trigger direct calls to Mixer's API
+* [mixc](#mixc)	 - Utility to trigger direct calls to Mixer's API.
 
 <a name="mixc_quota"></a>
 ## mixc quota
@@ -142,7 +142,7 @@ mixc quota
 ```
 
 ### See Also
-* [mixc](#mixc)	 - Utility to trigger direct calls to Mixer's API
+* [mixc](#mixc)	 - Utility to trigger direct calls to Mixer's API.
 
 <a name="mixc_report"></a>
 ## mixc report
@@ -186,7 +186,7 @@ mixc report
 ```
 
 ### See Also
-* [mixc](#mixc)	 - Utility to trigger direct calls to Mixer's API
+* [mixc](#mixc)	 - Utility to trigger direct calls to Mixer's API.
 
 <a name="mixc_version"></a>
 ## mixc version
@@ -227,5 +227,5 @@ mixc version
 ```
 
 ### See Also
-* [mixc](#mixc)	 - Utility to trigger direct calls to Mixer's API
+* [mixc](#mixc)	 - Utility to trigger direct calls to Mixer's API.
 
