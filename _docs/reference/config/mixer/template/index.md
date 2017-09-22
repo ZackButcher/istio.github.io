@@ -1,6 +1,6 @@
 ---
-title: Aspects
-overview: Generated documentation for Mixer's aspects.
+title: Mixer Aspects
+overview: Generated documentation for Mixer's Templates.
 
 order: 2000
 
